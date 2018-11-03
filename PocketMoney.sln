@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PocketMoney", "PocketMoney\PocketMoney.fsproj", "{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A645A9D5-2279-4FDB-8E85-54A627496CC4}
+	EndGlobalSection
+EndGlobal
