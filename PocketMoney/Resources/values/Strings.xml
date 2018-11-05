@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="hello">Calculate factorial</string>
   <string name="app_name">PocketMoney</string>
-  <string name="number">Enter number</string>
+  <string name="loginBtn">login</string>
+  <string name="registerBtn">regitser</string>
+  <string name="loginEdit">login</string>
+  <string name="passwdEdit">password</string>
 </resources>

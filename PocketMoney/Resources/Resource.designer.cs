@@ -45,13 +45,19 @@ namespace PocketMoney
 		{
 			
 			// aapt resource value: 0x7f050001
-			public const int button = 2131034113;
+			public const int loginBtn = 2131034113;
 			
-			// aapt resource value: 0x7f050000
-			public const int layout = 2131034112;
+			// aapt resource value: 0x7f050003
+			public const int loginEdit = 2131034115;
+			
+			// aapt resource value: 0x7f050004
+			public const int passwdEdit = 2131034116;
 			
 			// aapt resource value: 0x7f050002
-			public const int textbox = 2131034114;
+			public const int registerBtn = 2131034114;
+			
+			// aapt resource value: 0x7f050000
+			public const int responceView = 2131034112;
 			
 			static Id()
 			{
@@ -102,10 +108,19 @@ namespace PocketMoney
 			public const int app_name = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int hello = 2130968576;
+			public const int library_name = 2130968576;
 			
 			// aapt resource value: 0x7f040002
-			public const int number = 2130968578;
+			public const int loginBtn = 2130968578;
+			
+			// aapt resource value: 0x7f040004
+			public const int loginEdit = 2130968580;
+			
+			// aapt resource value: 0x7f040005
+			public const int passwdEdit = 2130968581;
+			
+			// aapt resource value: 0x7f040003
+			public const int registerBtn = 2130968579;
 			
 			static String()
 			{

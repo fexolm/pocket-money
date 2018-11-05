@@ -5,24 +5,19 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
-    <ProjectGuid>31f82c3f-6de8-4ad9-9229-b283ee4950c9</ProjectGuid>
+    <ProjectGuid>d8335c7e-d793-4bba-a880-d389618a3b1a</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>PocketMoney</RootNamespace>
-    <AssemblyName>PocketMoney</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
-    <AndroidApplication>True</AndroidApplication>
-    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
-    <AndroidResgenClass>Resource</AndroidResgenClass>
-    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <RootNamespace>PocketMoney.Auth</RootNamespace>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidApplication>False</AndroidApplication>
+    <AssemblyName>PocketMoney.Auth</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
-    <Name>PocketMoney</Name>
-    <SelectedDevice>Xiaomi Mi A1</SelectedDevice>
-    <DefaultDevice>Android_Accelerated_x86_Oreo</DefaultDevice>
-    <AndroidDesignerPreferredDevice>Nexus 5</AndroidDesignerPreferredDevice>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <Name>PocketMoney.Auth</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -42,30 +37,23 @@
     <DebugSymbols>True</DebugSymbols>
     <Optimize>True</Optimize>
     <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <PlatformTarget>
     </PlatformTarget>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <ConsolePause>False</ConsolePause>
     <Tailcalls>True</Tailcalls>
-    <DefineConstants>
-    </DefineConstants>
-    <AndroidManagedSymbols>true</AndroidManagedSymbols>
-    <GenerateTailCalls>true</GenerateTailCalls>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <None Include="Properties\AndroidManifest.xml" />
     <Compile Include="Properties\AssemblyInfo.fs" />
-    <Compile Include="MainActivity.fs" />
     <Content Include="packages.config" />
+    <Compile Include="Tables.fs" />
+    <Compile Include="AuthProvider.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
@@ -86,22 +74,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PocketMoney.Auth\PocketMoney.Auth.fsproj">
-      <Name>PocketMoney.Auth</Name>
-      <Project>{d8335c7e-d793-4bba-a880-d389618a3b1a}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\PocketMoney.Data\PocketMoney.Data.fsproj">
       <Name>PocketMoney.Data</Name>
       <Project>{7ab6cace-4054-4b2f-b812-2648c403f167}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
-  </Target>
 </Project>

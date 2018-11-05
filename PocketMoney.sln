@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PocketMoney", "PocketMoney\PocketMoney.fsproj", "{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PocketMoney.Auth", "PocketMoney.Auth\PocketMoney.Auth.fsproj", "{D8335C7E-D793-4BBA-A880-D389618A3B1A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PocketMoney.Data", "PocketMoney.Data\PocketMoney.Data.fsproj", "{7AB6CACE-4054-4B2F-B812-2648C403F167}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{31F82C3F-6DE8-4AD9-9229-B283EE4950C9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D8335C7E-D793-4BBA-A880-D389618A3B1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8335C7E-D793-4BBA-A880-D389618A3B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8335C7E-D793-4BBA-A880-D389618A3B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8335C7E-D793-4BBA-A880-D389618A3B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB6CACE-4054-4B2F-B812-2648C403F167}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB6CACE-4054-4B2F-B812-2648C403F167}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB6CACE-4054-4B2F-B812-2648C403F167}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB6CACE-4054-4B2F-B812-2648C403F167}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

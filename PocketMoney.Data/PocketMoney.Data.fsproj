@@ -5,22 +5,19 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{F2A71F9B-5D33-465A-A702-920D77279786}</ProjectTypeGuids>
-    <ProjectGuid>31f82c3f-6de8-4ad9-9229-b283ee4950c9</ProjectGuid>
+    <ProjectGuid>7ab6cace-4054-4b2f-b812-2648c403f167</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>PocketMoney</RootNamespace>
-    <AssemblyName>PocketMoney</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
-    <AndroidApplication>True</AndroidApplication>
-    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
-    <AndroidResgenClass>Resource</AndroidResgenClass>
-    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <RootNamespace>PocketMoney.Data</RootNamespace>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidApplication>False</AndroidApplication>
+    <AssemblyName>PocketMoney.Data</AssemblyName>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
-    <Name>PocketMoney</Name>
-    <SelectedDevice>Xiaomi Mi A1</SelectedDevice>
-    <DefaultDevice>Android_Accelerated_x86_Oreo</DefaultDevice>
-    <AndroidDesignerPreferredDevice>Nexus 5</AndroidDesignerPreferredDevice>
+    <TargetFrameworkProfile />
+    <Name>PocketMoney.Data</Name>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -42,39 +39,53 @@
     <DebugSymbols>True</DebugSymbols>
     <Optimize>True</Optimize>
     <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <PlatformTarget>
     </PlatformTarget>
+    <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <ConsolePause>False</ConsolePause>
     <Tailcalls>True</Tailcalls>
-    <DefineConstants>
-    </DefineConstants>
-    <AndroidManagedSymbols>true</AndroidManagedSymbols>
-    <GenerateTailCalls>true</GenerateTailCalls>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
-    <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\mipmap-hdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-mdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxhdpi\Icon.png" />
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
-    <None Include="Properties\AndroidManifest.xml" />
     <Compile Include="Properties\AssemblyInfo.fs" />
-    <Compile Include="MainActivity.fs" />
     <Content Include="packages.config" />
+    <Compile Include="IDataAccessProvider.fs" />
+    <Compile Include="FirebaseProvider.fs" />
+    <None Include="google-services.json" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <Compile Include="DbContext.fs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FireSharp">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
     <Reference Include="FSharp.Core">
       <HintPath>..\packages\FSharp.Core.4.3.4\lib\netstandard1.6\FSharp.Core.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Data">
       <HintPath>..\packages\FSharp.Data.3.0.0\lib\netstandard2.0\FSharp.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\portable-net45+win8+wpa81\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\monoandroid\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\monoandroid\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -84,18 +95,6 @@
     <Reference Include="Xamarin.Android.FSharp.ResourceProvider.Runtime">
       <HintPath>..\packages\Xamarin.Android.FSharp.ResourceProvider.1.0.0.13\lib\Xamarin.Android.FSharp.ResourceProvider.Runtime.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PocketMoney.Auth\PocketMoney.Auth.fsproj">
-      <Name>PocketMoney.Auth</Name>
-      <Project>{d8335c7e-d793-4bba-a880-d389618a3b1a}</Project>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\PocketMoney.Data\PocketMoney.Data.fsproj">
-      <Name>PocketMoney.Data</Name>
-      <Project>{7ab6cace-4054-4b2f-b812-2648c403f167}</Project>
-      <Private>True</Private>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

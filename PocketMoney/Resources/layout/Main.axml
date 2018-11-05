@@ -6,20 +6,32 @@
 	android:layout_height="match_parent"
 	android:minWidth="25px"
 	android:minHeight="25px">
-	<TextView 
-		android:id="@+id/layout"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:height="100px" />
 
+	<TextView 
+		android:id="@+id/responceView"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:scrollbars = "vertical"
+		android:height="400px" />
 	<Button
-		android:id="@+id/button"
+		android:id="@+id/loginBtn"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="@string/hello" />
+		android:text="@string/loginBtn" />
+	<Button
+		android:id="@+id/registerBtn"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/registerBtn" />
 	<EditText
-		android:id="@+id/textbox"
+		android:id="@+id/loginEdit"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="@string/number" />
+		android:hint="@string/loginEdit" />
+	<EditText
+		android:id="@+id/passwdEdit"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/passwdEdit" />
+
 </LinearLayout>

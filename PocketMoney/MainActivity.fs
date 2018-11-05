@@ -1,33 +1,42 @@
 ﻿namespace PocketMoney
 
 open System
-
 open Android.App
 open Android.Widget
-
+open Android.Text.Method
+open PocketMoney.Auth
 type Resources = PocketMoney.Resource
+
+type FactorialCache =
+    { Value: int }
 
 [<Activity (Label = "PocketMoney", MainLauncher = true, Icon = "@mipmap/icon")>]
 type MainActivity () =
     inherit Activity ()
 
-    let rec factorial x =
-        if (x < 1) then 1
-        else x * factorial (x - 1)
-
     override this.OnCreate (bundle) =
-
         base.OnCreate (bundle)
 
         // Set our view from the "main" layout resource
         this.SetContentView (Resources.Layout.Main)
-
         // Get our button from the layout resource, and attach an event to it
-        let button = this.FindViewById<Button>(Resources.Id.button)
-        let textbox = this.FindViewById<EditText>(Resources.Id.textbox)
-        let layout = this.FindViewById<TextView>(Resources.Id.layout)
+        let loginBtn = this.FindViewById<Button>(Resources.Id.loginBtn)
+        let registerBtn = this.FindViewById<Button>(Resources.Id.registerBtn)
+        let loginEdit = this.FindViewById<EditText>(Resources.Id.loginEdit)
+        let passwdEdit = this.FindViewById<EditText>(Resources.Id.passwdEdit)
+        let responceView = this.FindViewById<TextView>(Resources.Id.responceView)
 
-        button.Click.Add (fun _ -> 
-            layout.Text <- sprintf "%d" (factorial (textbox.Text |> int))
+        responceView.MovementMethod <- new ScrollingMovementMethod();
+
+        loginBtn.Click.Add (fun _ -> 
+            let result = TestAuthProvider.Login loginEdit.Text passwdEdit.Text
+            if not result.IsNone then responceView.Text <- sprintf "%s" (result.Value)
+            else responceView.Text <- "Failed"
         )
+
+        registerBtn.Click.Add (fun _ -> 
+            let result = TestAuthProvider.Register loginEdit.Text passwdEdit.Text
+            responceView.Text <- sprintf "%s" (result.ToString())
+        )
+
 
